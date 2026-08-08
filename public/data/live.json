@@ -1,54 +1,134 @@
 {
-  "updatedAt": "2026-08-08T21:32:04.441Z",
+  "updatedAt": "2026-08-08T21:51:37.873Z",
   "status": "live",
   "news": [
     {
-      "title": "縣市別吳郭魚養殖放養量彙整表",
-      "url": "https://www.fa.gov.tw/view.php?id=178&subtheme=&theme=GIO_others",
-      "source": "農業部漁業署",
-      "publishedAt": "2026-02-26T00:00:00+08:00"
+      "title": "臺灣鯛外銷不暢 漁業署提供加工獎勵做魚片 總量300公噸 視情況調整增加",
+      "url": "https://www.tfrin.gov.tw/theme_data.php?theme=news&sub_theme=feed&id=76039",
+      "source": "水試所水產新聞提要",
+      "publishedAt": "2026-06-18T09:08:33.000Z",
+      "isOfficial": false,
+      "category": "政策產銷"
     },
     {
-      "title": "因應美國關稅養殖吳郭魚凍儲獎勵作業原則",
-      "url": "https://www.fa.gov.tw/view.php?id=702&print=Y&subtheme=&theme=FisheriesAct_RULE",
+      "title": "台灣鯛出口受挫 漁業署再推加工獎勵 業者建議再調整",
+      "url": "https://www.tfrin.gov.tw/theme_data.php?theme=news&sub_theme=feed&id=76037",
+      "source": "水試所水產新聞提要",
+      "publishedAt": "2026-06-16T02:57:55.000Z",
+      "isOfficial": false,
+      "category": "政策產銷"
+    },
+    {
+      "title": "台灣鯛啟動加工獎勵 每公斤20元",
+      "url": "https://www.tfrin.gov.tw/theme_data.php?theme=news&sub_theme=feed&id=76035",
+      "source": "水試所水產新聞提要",
+      "publishedAt": "2026-06-16T02:45:35.000Z",
+      "isOfficial": false,
+      "category": "政策產銷"
+    },
+    {
+      "title": "臺灣鯛銷美受挫、價格下滑 漁業署估今年養殖業者轉向放 養虱目魚",
+      "url": "https://www.tfrin.gov.tw/theme_data.php?theme=news&sub_theme=feed&id=76029",
+      "source": "水試所水產新聞提要",
+      "publishedAt": "2026-06-09T08:50:48.000Z",
+      "isOfficial": false,
+      "category": "市場外銷"
+    },
+    {
+      "title": "飲控一族看過來！ 台灣鯛蛋白質打敗雞胸肉",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5YVTV2aVM0anJLTVhmUEZUaHNWc0lXZkVwQ1hFeHFVc29NbllEczMwRWFpajR4QkxYMU1oMm13X2VhWWlGa3N6TFhiME1PYUNOZ0J4ZDJxcmMwZTUyUUFROWRibm3SAWpBVV95cUxNSXV0ZlQ0cENRNmtaNXRLNkszUkp3OHpla2MyT2FSQjYxNThYZjJNUmZfdkRwSHdjMzhfLVh1dlZXMFU2bF9aUmduRG1Fd21FajRIRmY3aGJBSGdUbFFqdmM4VjdHd2pMOG13?oc=5",
+      "source": "自由健康網",
+      "publishedAt": "2026-06-01T07:00:00.000Z",
+      "category": "產業消息",
+      "isOfficial": false
+    },
+    {
+      "title": "升級產業韌性！漁業署續推臺灣鯛加工獎勵",
+      "url": "https://www.fa.gov.tw/view.php?id=2214&subtheme=&theme=Press_release",
       "source": "農業部漁業署",
-      "publishedAt": "2026-02-03T00:00:00+08:00"
+      "publishedAt": "2026-06-01T00:00:00+08:00",
+      "category": "政策產銷",
+      "isOfficial": true
+    },
+    {
+      "title": "農業部因應美國關稅養殖吳郭魚加工獎勵作業原則",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1WeUZXSzl6SnRzSmhHdWxTdkNjRUNLSWlMMTlWNGVHYkdFU2tPcDVZWDZZWE1GZTV6Zkd3VWlET213NXpxM01QOWhuT0hWWl9GSWdYNlk4Rms3bDg4c2h2VWl1NTZHdXlRZHA0SGVjNGxaS1dUTm45NjhTWQ?oc=5",
+      "source": "fa.gov.tw",
+      "publishedAt": "2026-05-28T05:15:48.000Z",
+      "category": "政策產銷",
+      "isOfficial": true
+    },
+    {
+      "title": "台灣鯛外銷下滑　漁業署：最大市場美國庫存充足",
+      "url": "https://www.cna.com.tw/news/ahel/202605270193.aspx",
+      "source": "中央社",
+      "publishedAt": "2026-05-27T14:41:00+08:00",
+      "category": "市場外銷",
+      "isOfficial": false
+    },
+    {
+      "title": "漁業署攜手全聯力推台灣鯛大賞　實踐友善地球願景",
+      "url": "https://www.fa.gov.tw/view.php?id=2198&subtheme=&theme=Press_release",
+      "source": "農業部漁業署",
+      "publishedAt": "2026-04-10T00:00:00+08:00",
+      "category": "品牌通路",
+      "isOfficial": true
+    },
+    {
+      "title": "台灣鯛崩盤風暴(上)：關稅讓漁民慘賠百萬 掀開殘酷分潤生態",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAzN3I2dTBDTk9KUE5seVhlV0RtZjB4Q1RpT0VpRW9VbUJBcXhsSmplQ202VkdUODcxQjExODNoN0JjTDZIT1dDZEhRWW9jaU83NzYxanhn?oc=5",
+      "source": "聯合報數位版",
+      "publishedAt": "2026-03-26T07:00:00.000Z",
+      "category": "市場外銷",
+      "isOfficial": false
+    },
+    {
+      "title": "縣市別養殖放養量彙整表(含魚塭口數、養殖面積、養殖戶數、放養量)-吳郭魚",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5fb1FzUVpGRWlLaU0wdHFMcHI3MFZjaXlCYU83UFVIb1VKMWxZSlZhNk5RYzZXOFNuYUs1clFlY3hTcTFmZnFuVXh1b2N0RExBUmtEeU5rTzZpV2wtOEtUa2hEMUU5bUtGeV9COUFFcHNfQQ?oc=5",
+      "source": "fa.gov.tw",
+      "publishedAt": "2026-02-28T04:03:41.000Z",
+      "category": "養殖技術",
+      "isOfficial": true
+    },
+    {
+      "title": "台灣鯛最冷寒冬，關稅效應市場急凍，中國低價倒貨；東南亞低價進口，產業苦撐",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9LVVF1V3M0MFFOa2trZERKU09nUFU2blpEVkNzS2gxUFhGanJMTUFhZmpYa2pEZVhfRlllWXphdm5vY0stYWRPQWg4bERBOVB3N2tKTA?oc=5",
+      "source": "上下游",
+      "publishedAt": "2026-02-09T08:00:00.000Z",
+      "category": "市場外銷",
+      "isOfficial": false
     },
     {
       "title": "廖一久院士國際書展開講揭開臺灣吳郭魚養殖技術的演進歷程",
       "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5Bbnh0NmtKTFN2bTRYZENWSHVLWHJvZ1pSTjMtSERvakRTNkpUcDRJeldhN0M5NUFxaXlpS3lGU2JmRUVIQnhOa200SDR4b29ObnRmRjZSU1RCYlo2c05qckd0UUwwazVaYjhUYmExaEQ?oc=5",
       "source": "ntou.edu.tw",
-      "publishedAt": "2026-02-07T08:00:00.000Z"
+      "publishedAt": "2026-02-07T08:00:00.000Z",
+      "category": "養殖技術",
+      "isOfficial": false
     },
     {
-      "title": "中研院院士廖一久新書 揭台灣蛻變為全球吳郭魚技術領航者實錄",
-      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9BcmxJdUFWdEZYSjlpemt2d1RzdFBoa2hvdzBtazFmTHVKUm15X2kzX0dJeTlyWjl6WHMzUF9ycm0tMWlVbjdoY2hXZGNnZlhi0gFWQVVfeXFMTjhob0E0dFBPVDZYT1kxVE5uZnkxb1NMckEtLTcxVG9kV3c3SmFad09VbFFBWlFRNXA4RXgtX1Rta0JDS3h5ZV9LWmozVW1aYUNUMzlzd0E?oc=5",
-      "source": "udn.com",
-      "publishedAt": "2026-02-07T08:00:00.000Z"
+      "title": "因應美國關稅養殖吳郭魚凍儲獎勵作業原則",
+      "url": "https://www.fa.gov.tw/view.php?id=702&print=Y&subtheme=&theme=FisheriesAct_RULE",
+      "source": "農業部漁業署",
+      "publishedAt": "2026-02-03T00:00:00+08:00",
+      "category": "政策產銷",
+      "isOfficial": true
     },
     {
-      "title": "南市台灣鯛養殖領先全台取得國際ASC認證 黃偉哲歡迎龐培歐大啖台灣鯛",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBqeDZTaW1CWDFfN19rV1J6M2h5TGdPQTNJNmwzS3RWUlBpVTJFcGUzY3JpMzU4QlNIRFNJaGFnRTN0emNhSGIzZnNqdW9oZHpDanZtQVlQd1JVc3hDRXQ1elBaVnFVdENFUi1JQmxn?oc=5",
-      "source": "tainan.gov.tw",
-      "publishedAt": "2022-03-14T09:34:59.000Z"
+      "title": "農業部因應美國關稅養殖吳郭魚凍儲獎勵作業原則",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBRV3J6Vjhfd0hma0xuWjdha0hpYm5FaXpVUV9ITEd1dXR2NnlYZ0xsM2haZ3ozWUNKX285clk2Y2JmTDRIeFI2Z1Q1YXctdElXUWFtekxld01WdXZJSURzN19GTGJzaVFNakViaDRwdndUdmt4OElnak52dw?oc=5",
+      "source": "fa.gov.tw",
+      "publishedAt": "2026-01-20T08:00:00.000Z",
+      "category": "政策產銷",
+      "isOfficial": true
     },
     {
-      "title": "【臺南新農】適地適種再精準管理 以消費者為導向接軌國際市場",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9UN3U5VklwR01rdzlybGtDNGlmTHhsMEZMSEc4NWVtcDJVck1nV3NoRVZMZW1xVC1vUVdsQkYtbENzVXgyY0U0Q3lqTDM1cEZkV0xJSQ?oc=5",
+      "title": "臺灣鯛價格低檔 漁業署：已規劃凍儲總量800公噸 15%稅率有助輸美競爭力",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBLV2trWjVET1k0S2pIMEJfV1drQWNVQVY3dU0xVFdocmltakh0REZHNHU1TWNJZ1YxUW91a2VTOF9hZkdsY0Zsb21HV2swenJmQ1B5eXpB?oc=5",
       "source": "農傳媒",
-      "publishedAt": "2025-12-31T08:25:55.000Z"
-    },
-    {
-      "title": "海大亮相台北國際書展 以海洋科研與永續視界展現大學之道",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9PSlVWYXVlVk5fdTF1VG5PNlpaUkFwbkRNZ1ZRTHlsSmFCTHU1RFJHZFBoSFlJaVhGcjFNR1k4QU9LYmkzTG5vMUc4d2NLMU9XQ05vMllR?oc=5",
-      "source": "cna.com.tw",
-      "publishedAt": "2026-02-03T08:00:00.000Z"
-    },
-    {
-      "title": "【外太空的台灣食物】AI 養出來的台灣鯛，成為全球第一個上太空的魚類食品",
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1PYTY1Z0R1V0d0WF9lWFBUVkFfLUl4bXp6Sm5ZVnlVLV9YdHQ3NkJqbHQ0SUhkUG0zQldRcThyY3RsS1ktYWRYNTVVMkxjVjJUaDBBMC1XeVU2VENRQWlLTHcya18xSnpKenVadlFOSlo4dw?oc=5",
-      "source": "TechOrange 科技報橘",
-      "publishedAt": "2020-03-04T08:00:00.000Z"
+      "publishedAt": "2026-01-19T11:21:43.000Z",
+      "category": "政策產銷",
+      "isOfficial": false
     }
   ],
   "internationalNews": [
@@ -310,10 +390,10 @@
       "referenceThrough": "2024",
       "url": "https://www.fao.org/fishery/static/FishStatJ/"
     },
-    "checkedAt": "2026-08-08T21:32:03.349Z"
+    "checkedAt": "2026-08-08T21:51:37.014Z"
   },
   "sources": {
-    "news": "Google News RSS + 農業部漁業署",
+    "news": "農業部漁業署 + 農業部水產試驗所 RSS + Google News RSS 多主題檢索",
     "internationalNews": "Google News RSS",
     "repositories": "GitHub Search API",
     "research": "NCBI PubMed E-utilities",

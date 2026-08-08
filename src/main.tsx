@@ -3,7 +3,8 @@ import { createRoot } from "react-dom/client";
 import "./styles.css";
 import yearbook from "../public/data/yearbook.json";
 
-type Article = { title: string; url: string; source: string; publishedAt: string };
+type NewsCategory = "全部" | "政策產銷" | "市場外銷" | "養殖技術" | "品牌通路" | "產業消息";
+type Article = { title: string; url: string; source: string; publishedAt: string; category?: Exclude<NewsCategory, "全部">; isOfficial?: boolean };
 type Repo = { name: string; url: string; description: string; stars: number; language: string; updatedAt: string };
 type IndustryPoint = { year: string; value: number; unit: string };
 type Research = { id: string; title: string; journal: string; publishedAt: string; authors: string[]; url: string };
@@ -133,6 +134,7 @@ function App() {
   const [isRefreshing, setRefreshing] = useState(false);
   const [pondArea, setPondArea] = useState(1);
   const [mode, setMode] = useState<"semi" | "breeder">("semi");
+  const [newsFilter, setNewsFilter] = useState<NewsCategory>("全部");
 
   const refresh = useCallback(async (silent = false) => {
     if (!silent) setRefreshing(true);
@@ -186,6 +188,9 @@ function App() {
   const topCounties = yearbook.counties.slice(0, 8);
   const maxCountyOutput = Math.max(...topCounties.map((county) => county.productionTonnes));
   const ntdBillion = (thousandNtd: number) => (thousandNtd / 100000).toFixed(2);
+  const domesticNews = newsFilter === "全部" ? live.news : live.news.filter((article) => article.category === newsFilter);
+  const featuredNews = domesticNews[0];
+  const newsCategories: NewsCategory[] = ["全部", "政策產銷", "市場外銷", "養殖技術", "品牌通路"];
 
   return (
     <div className="app-shell">
@@ -432,17 +437,28 @@ function App() {
               </div>
               <p className="source-line">來源：《台灣淡水魚類養殖（上）》頁 38，朱等（2009）。淨損益單位：萬元/公頃。</p>
             </article>
-            <article className="news panel">
-              <div className="panel-title"><h3>國內最新消息</h3><span>{live.news.length} 則</span></div>
-              <div className="news-list">
-                {live.news.slice(0, 5).map((article) => (
-                  <a href={article.url} target="_blank" rel="noreferrer" key={`${article.url}-${article.title}`}>
-                    <span>{article.source}</span>
-                    <b>{article.title}</b>
-                    <time>{article.publishedAt ? shortDate.format(new Date(article.publishedAt)) : "—"} ↗</time>
-                  </a>
-                ))}
+            <article className="news domestic-news panel">
+              <div className="panel-title"><h3>國內最新消息</h3><span>{live.news.length} 則 · 每 10 分鐘</span></div>
+              <div className="news-filters" role="group" aria-label="國內消息分類">
+                {newsCategories.map((category) => <button className={newsFilter === category ? "selected" : ""} onClick={() => setNewsFilter(category)} key={category}>{category}</button>)}
               </div>
+              {featuredNews ? <>
+                <a className="featured-news" href={featuredNews.url} target="_blank" rel="noreferrer">
+                  <div><span className="category-chip">{featuredNews.category || "產業消息"}</span>{featuredNews.isOfficial && <span className="official-chip">官方來源</span>}</div>
+                  <h3>{featuredNews.title}</h3>
+                  <footer><span>{featuredNews.source}</span><time>{featuredNews.publishedAt ? fullTime.format(new Date(featuredNews.publishedAt)) : "日期未提供"} ↗</time></footer>
+                </a>
+                <div className="domestic-list">
+                  {domesticNews.slice(1, 7).map((article) => (
+                    <a href={article.url} target="_blank" rel="noreferrer" key={`${article.url}-${article.title}`}>
+                      <div><span>{article.category || "產業消息"}</span>{article.isOfficial && <i>官方</i>}</div>
+                      <b>{article.title}</b>
+                      <small>{article.source}</small>
+                      <time>{article.publishedAt ? shortDate.format(new Date(article.publishedAt)) : "—"} ↗</time>
+                    </a>
+                  ))}
+                </div>
+              </> : <p className="empty-state">此分類目前沒有消息，請選擇其他分類。</p>}
             </article>
           </div>
           <div className="global-intel-grid">
