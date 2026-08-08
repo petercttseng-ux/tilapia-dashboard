@@ -1,16 +1,22 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles.css";
+import yearbook from "../public/data/yearbook.json";
 
 type Article = { title: string; url: string; source: string; publishedAt: string };
 type Repo = { name: string; url: string; description: string; stars: number; language: string; updatedAt: string };
 type IndustryPoint = { year: string; value: number; unit: string };
+type Research = { id: string; title: string; journal: string; publishedAt: string; authors: string[]; url: string };
+type FaoRelease = { globalProduction: { version: string; releaseDate: string; referenceThrough: string; url: string }; checkedAt: string };
 type LiveData = {
   updatedAt: string;
   status: "live" | "partial" | "fallback";
   news: Article[];
+  internationalNews: Article[];
   repositories: Repo[];
+  research: Research[];
   industry: IndustryPoint[];
+  fao: FaoRelease;
 };
 type Weather = {
   temperature_2m: number;
@@ -72,6 +78,7 @@ const fallback: LiveData = {
       publishedAt: "2026-02-03T00:00:00+08:00",
     },
   ],
+  internationalNews: [],
   repositories: [
     {
       name: "ropensci/rfishbase",
@@ -90,7 +97,12 @@ const fallback: LiveData = {
       updatedAt: "",
     },
   ],
+  research: [],
   industry: [],
+  fao: {
+    globalProduction: { version: "2026.1.0", releaseDate: "2026-03-31", referenceThrough: "2024", url: "https://www.fao.org/fishery/static/FishStatJ/" },
+    checkedAt: "",
+  },
 };
 
 const fmt = new Intl.NumberFormat("zh-TW");
@@ -171,6 +183,9 @@ function App() {
   const femaleBreeders = mode === "breeder" ? Math.round((stocking * 3) / 4) : 0;
   const maleBreeders = mode === "breeder" ? Math.round(stocking / 4) : 0;
   const maxOutput = Math.max(...productionHistory.map((d) => d.output));
+  const topCounties = yearbook.counties.slice(0, 8);
+  const maxCountyOutput = Math.max(...topCounties.map((county) => county.productionTonnes));
+  const ntdBillion = (thousandNtd: number) => (thousandNtd / 100000).toFixed(2);
 
   return (
     <div className="app-shell">
@@ -183,8 +198,9 @@ function App() {
           <a className="active" href="#overview"><span>01</span>即時總覽</a>
           <a href="#standards"><span>02</span>養殖基準</a>
           <a href="#breeding"><span>03</span>育種保種</a>
-          <a href="#industry"><span>04</span>產業脈動</a>
-          <a href="#resources"><span>05</span>開源資源</a>
+          <a href="#yearbook"><span>04</span>2025 年報</a>
+          <a href="#industry"><span>05</span>國內外情報</a>
+          <a href="#resources"><span>06</span>開源資源</a>
         </nav>
         <div className="side-note">
           <span className="pulse" /> 每 10 分鐘重讀
@@ -336,10 +352,72 @@ function App() {
           </div>
         </section>
 
+        <section id="yearbook" className="section-block yearbook-section">
+          <div className="section-title">
+            <div><span>04 / 2025 FISHERIES YEARBOOK</span><h2>2025 吳郭魚產業快照</h2></div>
+            <p>附檔 ODS 為計算依據、PDF 為版面與欄位複核；數字是年度統計，不會因每 10 分鐘排程自行改變。</p>
+          </div>
+
+          <div className="yearbook-kpis">
+            <article className="kpi-card"><span>全國生產量</span><strong>{fmt.format(yearbook.national.productionTonnes)}</strong><small>公噸 · 占漁業總產量 {yearbook.national.quantitySharePct}%</small></article>
+            <article className="kpi-card"><span>全國生產值</span><strong>{ntdBillion(yearbook.national.valueThousandNtd)}</strong><small>億元 · 占漁業總產值 {yearbook.national.valueSharePct}%</small></article>
+            <article className="kpi-card"><span>養殖面積</span><strong>{fmt.format(yearbook.national.areaHa)}</strong><small>公頃 · 單養 {fmt.format(yearbook.national.monoAreaHa)} 公頃</small></article>
+            <article className="kpi-card accent"><span>推估單位面積產量</span><strong>{yearbook.national.impliedYieldTonnesPerHa}</strong><small>公噸／公頃 · 內陸養殖產量 ÷ 面積</small></article>
+          </div>
+
+          <div className="yearbook-grid">
+            <article className="county-ranking panel">
+              <div className="panel-title"><h3>主要縣市生產量</h3><span>公噸 · 2025</span></div>
+              <div className="rank-bars">
+                {topCounties.map((county, index) => (
+                  <div className="rank-row" key={county.name}>
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                    <b>{county.name}</b>
+                    <div><i style={{ width: `${Math.max(1, (county.productionTonnes / maxCountyOutput) * 100)}%` }} /></div>
+                    <strong>{fmt.format(county.productionTonnes)}</strong>
+                  </div>
+                ))}
+              </div>
+              <p className="source-line">來源：11407-3《漁業生產量值—縣市魚類》。排名依生產量，不代表生產效率。</p>
+            </article>
+
+            <article className="area-mix panel">
+              <div className="panel-title"><h3>養殖面積結構</h3><span>3,709.35 公頃</span></div>
+              <div className="stacked-area" aria-label="淡水魚塭、鹹水魚塭與其他內陸養殖面積占比">
+                <span className="fresh" style={{ width: `${yearbook.national.freshwaterAreaHa / yearbook.national.areaHa * 100}%` }} />
+                <span className="brackish" style={{ width: `${yearbook.national.brackishAreaHa / yearbook.national.areaHa * 100}%` }} />
+                <span className="other-area" style={{ width: `${yearbook.national.otherInlandAreaHa / yearbook.national.areaHa * 100}%` }} />
+              </div>
+              <dl className="area-legend">
+                <div><dt><i className="fresh" />淡水魚塭</dt><dd>{fmt.format(yearbook.national.freshwaterAreaHa)} ha</dd></div>
+                <div><dt><i className="brackish" />鹹水魚塭</dt><dd>{fmt.format(yearbook.national.brackishAreaHa)} ha</dd></div>
+                <div><dt><i className="other-area" />其他內陸</dt><dd>{fmt.format(yearbook.national.otherInlandAreaHa)} ha</dd></div>
+              </dl>
+              <div className="system-output">
+                {yearbook.productionSystem.map((system) => (
+                  <div key={system.name}><span>{system.name}</span><b>{fmt.format(system.productionTonnes)} t</b><small>產值 {ntdBillion(system.valueThousandNtd)} 億元</small></div>
+                ))}
+              </div>
+              <p className="source-line">來源：11407-1、11409；面積分項加總與全國合計一致。</p>
+            </article>
+          </div>
+
+          <article className="yearbook-table panel">
+            <div className="panel-title"><h3>縣市產量、產值與面積</h3><span>前 8 名 · 可稽核明細</span></div>
+            <div className="table-scroll"><table>
+              <thead><tr><th>縣市</th><th>產量（公噸）</th><th>產值（億元）</th><th>面積（公頃）</th><th>推估產量／公頃</th></tr></thead>
+              <tbody>{topCounties.map((county) => <tr key={county.name}>
+                <td><b>{county.name}</b></td><td>{fmt.format(county.productionTonnes)}</td><td>{ntdBillion(county.valueThousandNtd)}</td><td>{fmt.format(county.areaHa)}</td><td>{(county.productionTonnes / county.areaHa).toFixed(1)} t</td>
+              </tr>)}</tbody>
+            </table></div>
+            <p className="source-line">註：縣市單位面積產量是跨表計算的觀察指標，可能受複養、混養、面積定義與統計期間影響，不宜單獨作績效判斷。</p>
+          </article>
+        </section>
+
         <section id="industry" className="section-block">
           <div className="section-title">
-            <div><span>04 / INDUSTRY PULSE</span><h2>歷史基準 × 最新產業消息</h2></div>
-            <p>不同年代與單位不直接相加；圖表用於理解結構，最新資料以原始來源為準。</p>
+            <div><span>05 / DOMESTIC & GLOBAL PULSE</span><h2>國內外吳郭魚情報</h2></div>
+            <p>Google News、PubMed、FAO 與農業部開放資料每 10 分鐘重新擷取；來源失敗時保留上一版並標示部分更新。</p>
           </div>
           <div className="industry-grid">
             <article className="history-chart panel">
@@ -355,7 +433,7 @@ function App() {
               <p className="source-line">來源：《台灣淡水魚類養殖（上）》頁 38，朱等（2009）。淨損益單位：萬元/公頃。</p>
             </article>
             <article className="news panel">
-              <div className="panel-title"><h3>最新消息</h3><span>{live.news.length} 則</span></div>
+              <div className="panel-title"><h3>國內最新消息</h3><span>{live.news.length} 則</span></div>
               <div className="news-list">
                 {live.news.slice(0, 5).map((article) => (
                   <a href={article.url} target="_blank" rel="noreferrer" key={`${article.url}-${article.title}`}>
@@ -367,6 +445,37 @@ function App() {
               </div>
             </article>
           </div>
+          <div className="global-intel-grid">
+            <article className="news panel">
+              <div className="panel-title"><h3>國際最新消息</h3><span>{live.internationalNews.length} 則</span></div>
+              <div className="news-list">
+                {live.internationalNews.slice(0, 5).map((article) => (
+                  <a href={article.url} target="_blank" rel="noreferrer" key={`${article.url}-${article.title}`}>
+                    <span>{article.source}</span>
+                    <b>{article.title}</b>
+                    <time>{article.publishedAt ? shortDate.format(new Date(article.publishedAt)) : "—"} ↗</time>
+                  </a>
+                ))}
+                {!live.internationalNews.length && <p className="empty-state">國際消息來源暫時無法連線，下一輪排程將重試。</p>}
+              </div>
+            </article>
+            <article className="research panel">
+              <div className="panel-title"><h3>最新研究索引</h3><span>PubMed · {live.research.length} 篇</span></div>
+              <div className="research-list">
+                {live.research.slice(0, 5).map((paper) => (
+                  <a href={paper.url} target="_blank" rel="noreferrer" key={paper.id}>
+                    <b>{paper.title}</b>
+                    <span>{paper.journal} · {paper.publishedAt || "日期未提供"}</span>
+                  </a>
+                ))}
+                {!live.research.length && <p className="empty-state">PubMed 暫無可顯示結果，下一輪排程將重試。</p>}
+              </div>
+            </article>
+          </div>
+          <article className="fao-release panel">
+            <div><span>FAO FISHSTATJ</span><h3>全球漁業與養殖生產資料</h3><p>目前偵測版本 {live.fao.globalProduction.version}，發布日 {live.fao.globalProduction.releaseDate}；全球生產資料參考期截至 {live.fao.globalProduction.referenceThrough} 年。</p></div>
+            <a href={live.fao.globalProduction.url} target="_blank" rel="noreferrer">開啟官方資料庫 ↗</a>
+          </article>
           {live.industry.length > 0 && (
             <div className="latest-stat panel">
               <div><span>農業部開放資料</span><h3>縣市別吳郭魚在池放養量</h3></div>
@@ -377,7 +486,7 @@ function App() {
 
         <section id="resources" className="section-block resources-section">
           <div className="section-title">
-            <div><span>05 / OPEN SOURCE</span><h2>GitHub 吳郭魚與水產資料工具</h2></div>
+            <div><span>06 / OPEN SOURCE</span><h2>GitHub 吳郭魚與水產資料工具</h2></div>
             <p>每次部署以 GitHub 公開搜尋重新整理；收錄代表資料與工具，不代表品質背書。</p>
           </div>
           <div className="repo-grid">
@@ -399,8 +508,8 @@ function App() {
           </div>
           <div className="source-columns">
             <div><b>教材層</b><p>五份使用者提供 PDF；核心引用集中在《台灣淡水魚類養殖（上）》吳郭魚章與《吳郭魚之育種管理》。</p></div>
-            <div><b>官方統計層</b><p><a href="https://data.gov.tw/en/datasets/44084" target="_blank" rel="noreferrer">政府資料開放平臺</a>、<a href="https://fadopen.fa.gov.tw/fadopen/service/qryBreedPredictReport.htmx" target="_blank" rel="noreferrer">漁業署放養量平臺</a>。</p></div>
-            <div><b>即時與開源層</b><p>Open-Meteo、Google News RSS 與 GitHub 公開 API；更新失敗時保留最後一次成功快照並顯示狀態。</p></div>
+            <div><b>官方統計層</b><p>2025 漁業年報 5 組 ODS／PDF，並以<a href="https://data.gov.tw/en/datasets/44084" target="_blank" rel="noreferrer">漁業產量資料集</a>與農業部 B32 放養資料補充。</p></div>
+            <div><b>定時網路層</b><p>Google News RSS、PubMed、FAO FishStatJ、GitHub 與 Open-Meteo；每 10 分鐘重抓，失敗時保留上一版。</p></div>
           </div>
         </section>
 

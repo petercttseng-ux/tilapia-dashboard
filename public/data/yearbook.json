@@ -1,0 +1,64 @@
+{
+  "referenceYear": 2025,
+  "label": "2025 漁業年報（民國 114 年）",
+  "national": {
+    "productionTonnes": 60015,
+    "valueThousandNtd": 4096380,
+    "inlandAquacultureTonnes": 60012,
+    "inlandAquacultureValueThousandNtd": 4096052,
+    "areaHa": 3709.35,
+    "monoAreaHa": 1707.83,
+    "polyAreaHa": 2001.52,
+    "brackishAreaHa": 749.6,
+    "freshwaterAreaHa": 2553.21,
+    "otherInlandAreaHa": 406.54,
+    "totalFisheriesTonnes": 892197,
+    "totalFisheriesValueThousandNtd": 96460045,
+    "quantitySharePct": 6.73,
+    "valueSharePct": 4.25,
+    "impliedYieldTonnesPerHa": 16.18
+  },
+  "productionSystem": [
+    { "name": "淡水魚塭", "productionTonnes": 45601, "valueThousandNtd": 3074348 },
+    { "name": "鹹水魚塭", "productionTonnes": 14152, "valueThousandNtd": 1001802 },
+    { "name": "其他內陸養殖", "productionTonnes": 259, "valueThousandNtd": 19902 }
+  ],
+  "counties": [
+    { "name": "臺南市", "productionTonnes": 23429, "valueThousandNtd": 1682613, "areaHa": 891.29 },
+    { "name": "嘉義縣", "productionTonnes": 21599, "valueThousandNtd": 1511687, "areaHa": 818.58 },
+    { "name": "高雄市", "productionTonnes": 6142, "valueThousandNtd": 312631, "areaHa": 163.44 },
+    { "name": "雲林縣", "productionTonnes": 2671, "valueThousandNtd": 162650, "areaHa": 144.61 },
+    { "name": "屏東縣", "productionTonnes": 2203, "valueThousandNtd": 147414, "areaHa": 88.08 },
+    { "name": "花蓮縣", "productionTonnes": 1476, "valueThousandNtd": 92998, "areaHa": 91.17 },
+    { "name": "桃園市", "productionTonnes": 1348, "valueThousandNtd": 86945, "areaHa": 1378.57 },
+    { "name": "新竹縣", "productionTonnes": 679, "valueThousandNtd": 56048, "areaHa": 96.22 },
+    { "name": "宜蘭縣", "productionTonnes": 233, "valueThousandNtd": 20321, "areaHa": 10.95 },
+    { "name": "彰化縣", "productionTonnes": 108, "valueThousandNtd": 10175, "areaHa": 14.17 },
+    { "name": "臺東縣", "productionTonnes": 104, "valueThousandNtd": 8157, "areaHa": 9.29 },
+    { "name": "南投縣", "productionTonnes": 18, "valueThousandNtd": 4366, "areaHa": 0.54 },
+    { "name": "臺中市", "productionTonnes": 2, "valueThousandNtd": 177, "areaHa": 1 },
+    { "name": "新竹市", "productionTonnes": 2, "valueThousandNtd": 114, "areaHa": 1.3 }
+  ],
+  "macroHistory": [
+    { "year": 2019, "productionTonnes": 1037512, "valueThousandNtd": 86622617 },
+    { "year": 2020, "productionTonnes": 885041, "valueThousandNtd": 71216052 },
+    { "year": 2021, "productionTonnes": 976000, "valueThousandNtd": 77880206 },
+    { "year": 2022, "productionTonnes": 874696, "valueThousandNtd": 82206232 },
+    { "year": 2023, "productionTonnes": 894863, "valueThousandNtd": 90524543 },
+    { "year": 2024, "productionTonnes": 1038626, "valueThousandNtd": 101675721 },
+    { "year": 2025, "productionTonnes": 892197, "valueThousandNtd": 96460045 }
+  ],
+  "sources": [
+    "11406_歷年漁業生產量值",
+    "11407-1 漁業生產量值—漁業種類魚類",
+    "11407-2 漁業生產量值—漁業種類別縣市別",
+    "11407-3 漁業生產量值—縣市魚類",
+    "11409 水產養殖面積"
+  ],
+  "notes": [
+    "產量單位為公噸；產值單位為新臺幣千元；養殖面積單位為公頃。",
+    "單位面積產量為內陸養殖產量除以吳郭魚養殖面積之推估值，並非原表直接欄位。",
+    "縣市表以整公噸呈現；可辨識縣市加總為 60,014 公噸，與全國 60,015 公噸相差 1 公噸，屬原表顯示精度差異。",
+    "年報數值為年度快照；每 10 分鐘更新的是網路來源與頁面資料快取。"
+  ]
+}

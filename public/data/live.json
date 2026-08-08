@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-08T15:11:18.821Z",
+  "updatedAt": "2026-08-08T21:32:04.441Z",
   "status": "live",
   "news": [
     {
@@ -23,14 +23,8 @@
     {
       "title": "中研院院士廖一久新書 揭台灣蛻變為全球吳郭魚技術領航者實錄",
       "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9BcmxJdUFWdEZYSjlpemt2d1RzdFBoa2hvdzBtazFmTHVKUm15X2kzX0dJeTlyWjl6WHMzUF9ycm0tMWlVbjdoY2hXZGNnZlhi0gFWQVVfeXFMTjhob0E0dFBPVDZYT1kxVE5uZnkxb1NMckEtLTcxVG9kV3c3SmFad09VbFFBWlFRNXA4RXgtX1Rta0JDS3h5ZV9LWmozVW1aYUNUMzlzd0E?oc=5",
-      "source": "UDN",
+      "source": "udn.com",
       "publishedAt": "2026-02-07T08:00:00.000Z"
-    },
-    {
-      "title": "【臺南新農】適地適種再精準管理 以消費者為導向接軌國際市場",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9UN3U5VklwR01rdzlybGtDNGlmTHhsMEZMSEc4NWVtcDJVck1nV3NoRVZMZW1xVC1vUVdsQkYtbENzVXgyY0U0Q3lqTDM1cEZkV0xJSQ?oc=5",
-      "source": "農傳媒",
-      "publishedAt": "2025-12-31T08:25:55.000Z"
     },
     {
       "title": "南市台灣鯛養殖領先全台取得國際ASC認證 黃偉哲歡迎龐培歐大啖台灣鯛",
@@ -39,16 +33,72 @@
       "publishedAt": "2022-03-14T09:34:59.000Z"
     },
     {
+      "title": "【臺南新農】適地適種再精準管理 以消費者為導向接軌國際市場",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9UN3U5VklwR01rdzlybGtDNGlmTHhsMEZMSEc4NWVtcDJVck1nV3NoRVZMZW1xVC1vUVdsQkYtbENzVXgyY0U0Q3lqTDM1cEZkV0xJSQ?oc=5",
+      "source": "農傳媒",
+      "publishedAt": "2025-12-31T08:25:55.000Z"
+    },
+    {
       "title": "海大亮相台北國際書展 以海洋科研與永續視界展現大學之道",
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9PSlVWYXVlVk5fdTF1VG5PNlpaUkFwbkRNZ1ZRTHlsSmFCTHU1RFJHZFBoSFlJaVhGcjFNR1k4QU9LYmkzTG5vMUc4d2NLMU9XQ05vMllR?oc=5",
       "source": "cna.com.tw",
       "publishedAt": "2026-02-03T08:00:00.000Z"
     },
     {
-      "title": "台南之光 7家台灣鯛養殖戶 獲國際ASC認證",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5ITkEzdDFVLXpEZ0dTUzlQX2MtM0o2UjJ6Q1h2VXdhVU1LcGNtU0tTTTZmTDBRRWtYNURnc0p2bE9JX0lXSG8wekNqNXp3N3NfYzlLellmekVNUVU?oc=5",
-      "source": "自由時報",
-      "publishedAt": "2021-04-14T07:00:00.000Z"
+      "title": "【外太空的台灣食物】AI 養出來的台灣鯛，成為全球第一個上太空的魚類食品",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1PYTY1Z0R1V0d0WF9lWFBUVkFfLUl4bXp6Sm5ZVnlVLV9YdHQ3NkJqbHQ0SUhkUG0zQldRcThyY3RsS1ktYWRYNTVVMkxjVjJUaDBBMC1XeVU2VENRQWlLTHcya18xSnpKenVadlFOSlo4dw?oc=5",
+      "source": "TechOrange 科技報橘",
+      "publishedAt": "2020-03-04T08:00:00.000Z"
+    }
+  ],
+  "internationalNews": [
+    {
+      "title": "Tilapia keeps Brazil’s aquaculture exports afloat despite steep first-half decline",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNTFBTMFMyZGw4YnJNLTZuckRyYXRPLS1JbzN5dWRPOGJ4Z1QyNmp4dWRxVmRjMS1zUDg3Y0huUG1oNFQwdkUzMk8wbUxSYUhCN1Q1NWtTT2RqWFV2M2taWW02N0s5WDNtbDNRN3lkd0VTTG56TUw1Z28tT09yWnZVN2F3TmYxbVhlYzhOZUZlci1yTTgxOUloTlRPT1lWeFNRUmZfN25TemFlUUJGVXo5SzljXzItdFNxOW8yRTFXczJMZkk1?oc=5",
+      "source": "Undercurrent News",
+      "publishedAt": "2026-08-07T14:11:00.000Z"
+    },
+    {
+      "title": "Nam Viet and Benchmark Genetics will collaborate on Tilapia breeding program",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNYnZtLW5LbURuRjJlMG5IXzJtMEFVZWhCc0NqUVB2cmhPdDJKblRRWUR4VjJybGdic0xncm5uZDc1ckdWR01TVjd1aUJrVzhsMGxwU1BKSDBTVmxwekoxSVRKNGJJTlBMNWFfQ1BsUUZvTzBNbkx1QTB1Wm9pbXR3bTZuZThoeVlBVkozSlU1TlVZUjZCV0FVSmw1cFk5dlJocU9JeUM0VmNqNEZhUE1LZDRGQ29jNDhFN1k5Q09UaC11TTZK?oc=5",
+      "source": "intrafish.com",
+      "publishedAt": "2026-08-05T14:29:18.000Z"
+    },
+    {
+      "title": "Benchmark Genetics helps Vietnamese fish farmer pivot to tilapia",
+      "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPWjQ1YzhIZTVHWHoyZUUxWXZUbm80WjhNekRnMDdtQUtQR2FKRVVZTllaWHNXeXRiMGZ0TVhMOVlMNzdJWjRkbjdkdnlmN2Z5Ml9wWlNDeDNqNVRnelVpU29uVUFSNHgtM1BCRTlGdUsxMFBNM21zd1R1TzY0V1QweUtsQlEzNktOSTh2eEVySzBQYWFva1hyN0FWM1gyd0xROXR6WjU3dTNRc0RyTm9XRi1ESHFpMFBWdDlfSFpGUlFBeFFnbElabUQ1bklDbks3NEFkLUZmMUxEQVFTcy1senRvWUZGZU0yOWV5RmwzbEs?oc=5",
+      "source": "fishfarmingexpert.com",
+      "publishedAt": "2026-08-05T07:53:36.000Z"
+    },
+    {
+      "title": "Emergence, identification, and characterization of a novel Streptococcus agalactiae CPS type Ia ST7 strain (Ia-2021) causing large scale mortalities in tilapia aquaculture",
+      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5KUk5mdXJIUjdHUjdEQUstVS1xR3Q1bHBfVGZKSXJlSjcteFlab3lLa2t5M3VzWkxFMDhnZl9zLVlwZ2Q0dVdfLXRJRlhXUkxGNVFQZWk5Qk9JSUU2ME9N?oc=5",
+      "source": "Nature",
+      "publishedAt": "2026-05-09T07:00:00.000Z"
+    },
+    {
+      "title": "Brazil launches nationwide tilapia genetics bank to secure diversity, boost aquaculture output",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOZWNkSWo0OGJLdzBoN0hseXV2YkRpYzVZWjEtcV8tS3RhNFl2V0M3U1hFQkY2b2J0TFN5Q3dtclhia09oVHE3OVR1UWxvWjlIYnI0NE1leHRiTFRPTE9vMGNyOXBpMGhzQjlubVYtNXdqcFBzNE5zY1VpaEhtTHBKemlrZUlJbFpDZ1FXZ3VqSm1aZm1VNUlPa2xvcV9mOWg2aUlaWU1CdmlNMG1wekxHS1drbkx1VFhDMlhJNU40YnF6ZjB6Y3hVMEZvUjl3a1g1Z0FVaHVaNA?oc=5",
+      "source": "SeafoodSource",
+      "publishedAt": "2026-03-19T17:56:16.000Z"
+    },
+    {
+      "title": "One Health approach to tilapia welfare: public policies for sustainable aquaculture in Papaloapan indigenous communities, Oaxaca, Mexico",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPZ2JjMWhySkxPcHB1dHF4QlVRalhtc3B1bHJPU3NsenR3Y0hscmM2Slh3aTNMY3U4RUF2ZklLRWZETmdZQWVOWDVXLThReWZKazVXTlEyWnBmRlFXZ0JWMmpsazdFNjFkZnAtREp2YUJPeTVJalUyeWxPcXRFcTFEOHVFem9NVmtwdG1wNDZZbXEzUVl4RWJJ?oc=5",
+      "source": "Frontiers",
+      "publishedAt": "2026-04-09T11:33:35.000Z"
+    },
+    {
+      "title": "The Caribbean looks to aquaculture to secure a viable food future - Responsible Seafood Advocate",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOWnVGSG1yRTNsdzRIUnAtckR4VzhLd1YyZXFOYy04ZF9YUlg0WUtSWmhkVkZHVXNrNGtBUXZSWXRnMGY0OWp6QWRlUlBucUxvUXpoSU1VU1BxT0JGSHpCekM0NS1fUXpUaEhHcUdtd2xWNW1aaFJVM2wwblNDcFVoQjJJUUk2U1hNZHdEUDZPUEhtU0loQlNWNkxtNm1DLVRoQmhOOXpRbzk?oc=5",
+      "source": "Global Seafood Alliance",
+      "publishedAt": "2026-05-26T07:00:00.000Z"
+    },
+    {
+      "title": "Valorization of corn husk waste: Xylooligosaccharides as a sustainable prebiotic enhance growth, gut health, and fillet quality in Nile tilapia ( Oreochromis niloticus",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE93cU9kSkJjWkpHZkg2VTZQMndJdmFBcUxkN3h4dDdKcWlodDVkM2dKRmR2VWRfczJWZ2xMNm13QlBZRFZNMEpmVTN6OFQ4dVIyT195WF9ZSWhXc3QyY2ZDT0FjVDZBbjBSRGhF?oc=5",
+      "source": "Wiley Online Library",
+      "publishedAt": "2026-04-01T07:00:00.000Z"
     }
   ],
   "repositories": [
@@ -117,6 +167,80 @@
       "updatedAt": "2026-08-04T14:40:49Z"
     }
   ],
+  "research": [
+    {
+      "id": "42562543",
+      "title": "Tilapia-derived oligopeptide LSGYG inhibits tumor metastasis via electrostatic-lock-like retention at the catalytic region of MMP-2 and suppression of the HIF-1α-mediated EMT-like cascade.",
+      "journal": "Food research international (Ottawa, Ont.)",
+      "publishedAt": "2026 Oct 1",
+      "authors": [
+        "Chen Y",
+        "Huang H",
+        "Liu Y"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42562543/"
+    },
+    {
+      "id": "42401213",
+      "title": "Functional remodeling of IgM(+) B cells in Streptococcus agalactiae-resistant Nile tilapia.",
+      "journal": "Fish & shellfish immunology",
+      "publishedAt": "2026 Oct",
+      "authors": [
+        "Zheng Y",
+        "Wang D",
+        "Yang J"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42401213/"
+    },
+    {
+      "id": "42134155",
+      "title": "Supramolecular self-assembly mechanisms, interfacial behavior, multimodal antimicrobial and anti-adhesion activities of the novel Tilapia piscidin-3 (TP3) peptide hydrogel.",
+      "journal": "Colloids and surfaces. B, Biointerfaces",
+      "publishedAt": "2026 Oct",
+      "authors": [
+        "Selvaraj SP",
+        "Yeh JC",
+        "Chang JC"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42134155/"
+    },
+    {
+      "id": "42308948",
+      "title": "Optimizing steaming core temperature to enhance tilapia protein digestibility in an elderly model: structural and textural mechanisms.",
+      "journal": "Food chemistry",
+      "publishedAt": "2026 Sep 1",
+      "authors": [
+        "Qiu Z",
+        "Shi Y",
+        "Zheng Y"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42308948/"
+    },
+    {
+      "id": "42296656",
+      "title": "Comprehensive insights into time-dependent dynamic of maturation time on flavor formation in low-salt fermented tilapia.",
+      "journal": "Food chemistry",
+      "publishedAt": "2026 Sep 1",
+      "authors": [
+        "Zhao H",
+        "Zhang K",
+        "Yang L"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42296656/"
+    },
+    {
+      "id": "42276433",
+      "title": "Transcriptional expression of tilapia Mx and Viperin is differentially regulated by three subgroups of type I IFNs mainly via the JAK-STAT signaling.",
+      "journal": "Fish & shellfish immunology",
+      "publishedAt": "2026 Sep",
+      "authors": [
+        "Mo J",
+        "Wen Q",
+        "Tang S"
+      ],
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42276433/"
+    }
+  ],
   "industry": [
     {
       "year": "台南市",
@@ -179,10 +303,22 @@
       "unit": "尾"
     }
   ],
+  "fao": {
+    "globalProduction": {
+      "version": "2026.1.0",
+      "releaseDate": "2026-03-31",
+      "referenceThrough": "2024",
+      "url": "https://www.fao.org/fishery/static/FishStatJ/"
+    },
+    "checkedAt": "2026-08-08T21:32:03.349Z"
+  },
   "sources": {
     "news": "Google News RSS + 農業部漁業署",
+    "internationalNews": "Google News RSS",
     "repositories": "GitHub Search API",
-    "industry": "農業部縣市別吳郭魚放養量 UnitId B32"
+    "research": "NCBI PubMed E-utilities",
+    "industry": "農業部縣市別吳郭魚放養量 UnitId B32",
+    "fao": "FAO FishStatJ current_versionFAO.xml"
   },
   "errors": []
 }
