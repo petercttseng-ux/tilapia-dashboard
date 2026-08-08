@@ -177,7 +177,7 @@ function App() {
       <aside className="sidebar" aria-label="主要導覽">
         <a className="brand" href="#top" aria-label="返回頁首">
           <span className="brand-mark">T</span>
-          <span>台灣吳郭魚<br /><small>情報站</small></span>
+          <span><small>農業部水產試驗所</small><br />台灣吳郭魚情報站</span>
         </a>
         <nav>
           <a className="active" href="#overview"><span>01</span>即時總覽</a>
@@ -195,7 +195,7 @@ function App() {
       <main id="top">
         <header className="topbar">
           <div>
-            <p className="eyebrow">TILAPIA INTELLIGENCE / TAIWAN</p>
+            <p className="eyebrow">農業部水產試驗所 · TILAPIA INTELLIGENCE / TAIWAN</p>
             <h1>把魚塭的訊號，<br /><em>整理成下一步。</em></h1>
           </div>
           <div className="toolbar">
@@ -405,7 +405,7 @@ function App() {
         </section>
 
         <footer className="site-footer">
-          <div><b>台灣吳郭魚情報站</b><p>研究與管理輔助資訊，不替代現場量測、獸醫診斷或主管機關規範。</p></div>
+          <div><b>農業部水產試驗所｜台灣吳郭魚情報站</b><p>研究與管理輔助資訊，不替代現場量測、獸醫診斷或主管機關規範。</p></div>
           <span>Built from reviewed sources · {new Date().getFullYear()}</span>
         </footer>
       </main>
