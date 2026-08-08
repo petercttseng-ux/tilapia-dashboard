@@ -326,6 +326,55 @@ input[type="range"] { width: 100%; margin: 20px 0 24px; accent-color: var(--teal
 .breeding-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 28px; }
 .breeding-tags span { padding: 6px 9px; border: 1px solid rgba(255,255,255,.13); border-radius: 99px; color: var(--aqua); font-size: 9px; }
 .genetics-card .source-line { color: rgba(255,255,255,.37); }
+.breeding-kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 38px 0 16px; }
+.breeding-kpis article { padding: 18px; border: 1px solid rgba(255,255,255,.12); border-radius: 12px; background: rgba(255,255,255,.055); }
+.breeding-kpis span, .breeding-kpis strong, .breeding-kpis small { display: block; }
+.breeding-kpis span { color: var(--aqua); font-size: 8px; font-weight: 800; letter-spacing: .08em; }
+.breeding-kpis strong { margin: 12px 0 5px; color: var(--lime); font-size: 26px; letter-spacing: -.04em; }
+.breeding-kpis small { color: rgba(255,255,255,.47); font-size: 8px; line-height: 1.55; }
+.breeding-method-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 16px; }
+.breeding-methods-card, .backcross-card, .conservation-card, .records-card { padding: 26px; border: 1px solid rgba(255,255,255,.12); border-radius: 14px; background: rgba(255,255,255,.045); }
+.breeding-methods-card .panel-title > span, .backcross-card .panel-title > span, .conservation-card .panel-title > span, .records-card .panel-title > span { color: var(--aqua); background: rgba(127,194,177,.1); }
+.method-list { display: grid; }
+.method-list > div { display: grid; grid-template-columns: 30px 92px 1fr; gap: 10px; padding: 13px 0; border-top: 1px solid rgba(255,255,255,.1); }
+.method-list > div > span { color: var(--aqua); font: 700 10px Georgia, serif; }
+.method-list h4 { margin: 0; color: #fff; font-size: 11px; }
+.method-list p { margin: 0; color: rgba(255,255,255,.68); font-size: 9px; }
+.method-list small { grid-column: 3; color: rgba(255,255,255,.38); font-size: 8px; }
+.recovery-chart { height: 230px; display: flex; align-items: flex-end; gap: 8px; padding: 30px 4px 0; border-bottom: 1px solid rgba(255,255,255,.14); background: repeating-linear-gradient(to top, transparent 0 44px, rgba(255,255,255,.05) 45px); }
+.recovery-chart > div { height: 100%; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; }
+.recovery-chart b { margin-bottom: 5px; color: var(--lime); font-size: 8px; }
+.recovery-chart span { width: min(27px, 80%); height: 175px; display: flex; align-items: flex-end; }
+.recovery-chart i { display: block; width: 100%; border-radius: 4px 4px 0 0; background: linear-gradient(to top, var(--teal), var(--aqua)); }
+.recovery-chart small { margin: 6px 0; color: rgba(255,255,255,.5); font-size: 7px; }
+.backcross-card > p:not(.source-line) { margin: 18px 0 0; color: rgba(255,255,255,.57); font-size: 9px; }
+.backcross-card .source-line { color: rgba(255,255,255,.34); }
+.breeding-target-card { margin-top: 16px; padding: 26px; border-radius: 14px; color: var(--ink); background: #f3f6ed; }
+.target-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.target-grid div { min-height: 135px; padding: 15px; border: 1px solid var(--line); border-radius: 9px; background: var(--white); }
+.target-grid span, .target-grid b, .target-grid small { display: block; }
+.target-grid span { color: var(--teal); font-size: 9px; font-weight: 800; }
+.target-grid b { margin: 12px 0 8px; font-size: 11px; line-height: 1.5; }
+.target-grid small { color: var(--muted); font-size: 8px; }
+.conservation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+.conservation-card ol { margin: 0; padding: 0; list-style: none; }
+.conservation-card li { display: grid; grid-template-columns: 32px 1fr; gap: 11px; padding: 13px 0; border-top: 1px solid rgba(255,255,255,.1); }
+.conservation-card li > span { color: var(--lime); font: 700 10px Georgia, serif; }
+.conservation-card b { font-size: 11px; }
+.conservation-card p { margin: 3px 0 0; color: rgba(255,255,255,.48); font-size: 9px; }
+.conservation-card > a { display: inline-block; margin-top: 17px; color: var(--lime); font-size: 9px; font-weight: 700; text-decoration: none; }
+.records-card > div:not(.panel-title) { display: flex; flex-wrap: wrap; gap: 7px; }
+.records-card > div:not(.panel-title) span { padding: 7px 9px; border: 1px solid rgba(255,255,255,.12); border-radius: 99px; color: var(--aqua); font-size: 8px; }
+.records-card .source-line { margin-top: 24px; color: rgba(255,255,255,.4); }
+.breeding-research-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; }
+.breeding-research-links a { min-height: 145px; padding: 20px; border-radius: 12px; color: var(--ink); background: var(--lime); text-decoration: none; transition: .2s ease; }
+.breeding-research-links a:nth-child(2) { background: var(--aqua); }
+.breeding-research-links a:nth-child(3) { background: #f3f6ed; }
+.breeding-research-links a:hover, .breeding-research-links a:focus-visible { transform: translateY(-3px); outline: none; }
+.breeding-research-links span, .breeding-research-links b, .breeding-research-links small { display: block; }
+.breeding-research-links span { color: var(--teal); font-size: 8px; font-weight: 800; letter-spacing: .08em; }
+.breeding-research-links b { margin: 18px 0 6px; font-size: 14px; }
+.breeding-research-links small { color: rgba(16,45,44,.62); font-size: 8px; line-height: 1.55; }
 .species-table-wrap { margin-top: 40px; padding: 28px; border-radius: 14px; background: #f3f6ed; color: var(--ink); }
 table { width: 100%; border-collapse: collapse; font-size: 11px; }
 th { color: var(--muted); font-size: 9px; text-align: left; }
@@ -417,6 +466,8 @@ tbody tr:hover { background: rgba(127,194,177,.08); }
   .update-card > strong { margin-top: 10px; }
   .operations-grid { grid-template-columns: 1fr 1fr; }
   .yearbook-kpis { grid-template-columns: 1fr 1fr; }
+  .breeding-kpis { grid-template-columns: 1fr 1fr; }
+  .target-grid { grid-template-columns: repeat(3, 1fr); }
   .cost { grid-column: span 2; }
   .donut-wrap { justify-content: center; }
   .repo-grid { grid-template-columns: 1fr 1fr; }
@@ -438,6 +489,8 @@ tbody tr:hover { background: rgba(127,194,177,.08); }
   .update-card { grid-column: auto; }
   .section-title { grid-template-columns: 1fr; gap: 15px; }
   .operations-grid, .breeding-layout, .industry-grid, .yearbook-grid, .global-intel-grid { grid-template-columns: 1fr; }
+  .breeding-method-grid, .conservation-grid { grid-template-columns: 1fr; }
+  .breeding-research-links { grid-template-columns: 1fr; }
   .cost { grid-column: auto; }
   .species-table-wrap { overflow-x: auto; }
   table { min-width: 600px; }
@@ -463,6 +516,9 @@ tbody tr:hover { background: rgba(127,194,177,.08); }
   .weather-details { grid-template-columns: 1fr 1fr; }
   .fact-grid { grid-template-columns: 1fr; }
   .yearbook-kpis { grid-template-columns: 1fr; }
+  .breeding-kpis, .target-grid { grid-template-columns: 1fr; }
+  .method-list > div { grid-template-columns: 24px 1fr; }
+  .method-list p, .method-list small { grid-column: 2; }
   .system-output { grid-template-columns: 1fr; }
   .rank-row { grid-template-columns: 22px 52px 1fr 54px; gap: 7px; }
   .donut-wrap { flex-direction: column; align-items: stretch; }

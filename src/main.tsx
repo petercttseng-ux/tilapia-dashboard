@@ -62,6 +62,35 @@ const breedingSteps = [
   ["保種與回饋", "活體保種＋遺傳物質保存，定期更新"],
 ];
 
+const breedingTargets = [
+  ["體色", "紅色均一、減少黑斑", "表型分級＋基因標誌"],
+  ["成長", "增重、飼料效率、上市日齡", "同批環境＋家系比較"],
+  ["抗逆", "耐低溫、耐鹽、疾病存活", "標準化挑戰試驗"],
+  ["體型", "體高、可食率、魚片規格", "影像量測＋屠體資料"],
+  ["繁殖", "性別比例、產卵與孵化", "親本與子代追蹤"],
+];
+
+const breedingMethods = [
+  { name: "選擇育種", use: "連續改善成長、抗病、體型等多基因性狀", guard: "須校正批次與環境，避免只選表型最大的個體" },
+  { name: "雜交育種", use: "整合不同品系優點並利用雜種優勢", guard: "性狀可能在 F2 分離，需保留親本與完整家系" },
+  { name: "回交導入", use: "把特定性狀導入商用品系，同時恢復原品系背景", guard: "每代都要驗證目標性狀與背景，避免連鎖拖帶" },
+  { name: "純系建立", use: "固定高遺傳穩定性狀，作為育種或雜交親本", guard: "近交可能降低存活與繁殖力，須監測近交衰退" },
+  { name: "標誌輔助選拔", use: "在表型尚未出現前辨識目標基因型，加速選拔", guard: "標誌須與性狀可靠連鎖，教材建議距離小於 5 cM" },
+];
+
+const backcrossRecovery = [
+  { generation: "F1", percent: 50 },
+  { generation: "BC1", percent: 75 },
+  { generation: "BC2", percent: 88 },
+  { generation: "BC3", percent: 94 },
+  { generation: "BC4", percent: 97 },
+  { generation: "BC5", percent: 98 },
+  { generation: "BC6", percent: 99.2 },
+  { generation: "BC7", percent: 99.7 },
+];
+
+const breedingRecords = ["個體與晶片編號", "父母本與家系", "孵化日與批次", "池號與環境", "性別與成熟度", "體長、體重與增重", "存活與疾病紀錄", "體色與體型影像", "基因型與標誌", "配對、產卵與子代數"];
+
 const fallback: LiveData = {
   updatedAt: "2026-08-08T14:00:00.000Z",
   status: "fallback",
@@ -348,6 +377,72 @@ function App() {
               <p className="source-line">來源：《台灣淡水魚類養殖（上）》頁 43；《吳郭魚之育種管理》頁 22–25、50–54。</p>
             </article>
           </div>
+
+          <div className="breeding-kpis">
+            <article><span>品系建立</span><strong>6 / 9 代</strong><small>至少 6 代為初代品系；穩定品系至少 9 代</small></article>
+            <article><span>標誌連鎖</span><strong>&lt; 5 cM</strong><small>教材建議的目標基因與標誌距離</small></article>
+            <article><span>SNP 資源</span><strong>50,982</strong><small>全基因組晶片位點；7,749 SNP 用於親緣樹</small></article>
+            <article><span>超雄性選育</span><strong>&gt; 95%</strong><small>紅色吳郭魚子代雄性率之試驗結果</small></article>
+          </div>
+
+          <div className="breeding-method-grid">
+            <article className="breeding-methods-card">
+              <div className="panel-title"><h3>育種方法與風險控制</h3><span>方法不是目的</span></div>
+              <div className="method-list">
+                {breedingMethods.map((method, index) => <div key={method.name}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <h4>{method.name}</h4>
+                  <p>{method.use}</p>
+                  <small>{method.guard}</small>
+                </div>)}
+              </div>
+            </article>
+
+            <article className="backcross-card">
+              <div className="panel-title"><h3>回交世代的遺傳背景恢復</h3><span>與輪迴親本相似度</span></div>
+              <div className="recovery-chart">
+                {backcrossRecovery.map((point) => <div key={point.generation}>
+                  <b>{point.percent}%</b>
+                  <span><i style={{ height: `${point.percent}%` }} /></span>
+                  <small>{point.generation}</small>
+                </div>)}
+              </div>
+              <p>回交可逐代恢復商用品系背景，但每代仍須同時確認目標基因、表型與繁殖表現。</p>
+              <p className="source-line">來源：《吳郭魚之育種管理》圖 34；數值為理論相似度示意。</p>
+            </article>
+          </div>
+
+          <article className="breeding-target-card">
+            <div className="panel-title"><h3>選育目標 × 評估證據</h3><span>先定義性狀，再決定工具</span></div>
+            <div className="target-grid">
+              {breedingTargets.map(([target, goal, evidence]) => <div key={target}><span>{target}</span><b>{goal}</b><small>{evidence}</small></div>)}
+            </div>
+          </article>
+
+          <div className="conservation-grid">
+            <article className="conservation-card">
+              <div className="panel-title"><h3>三層種原保全</h3><span>避免單點失效</span></div>
+              <ol>
+                <li><span>01</span><div><b>活體族群</b><p>保留足量且來源分散的親本，避免少數個體造成創始者效應。</p></div></li>
+                <li><span>02</span><div><b>離體保存</b><p>精子、配子或體細胞保存，降低疾病與設施事故造成品系全失的風險。</p></div></li>
+                <li><span>03</span><div><b>資料保存</b><p>家系、表型、基因型與配對紀錄同步備份，才能復原與驗證品系。</p></div></li>
+              </ol>
+              <a href="https://www.tfrin.gov.tw/theme_data.php?id=172&theme=research" target="_blank" rel="noreferrer">查看水試所分子育種與體細胞保存研究 ↗</a>
+            </article>
+
+            <article className="records-card">
+              <div className="panel-title"><h3>每尾候選親魚應留下</h3><span>{breedingRecords.length} 項核心欄位</span></div>
+              <div>{breedingRecords.map((record) => <span key={record}>{record}</span>)}</div>
+              <p className="source-line">表型必須連回個體、家系、環境與世代；缺一項，就很難區分遺傳效果與池況差異。</p>
+            </article>
+          </div>
+
+          <div className="breeding-research-links">
+            <a href="https://www.tfrin.gov.tw/theme_data.php?id=588&sub_theme=news&theme=news" target="_blank" rel="noreferrer"><span>實務成果</span><b>超雄性紅色吳郭魚</b><small>遺傳選育＋分子標誌；子代雄性率超過 95%</small></a>
+            <a href="https://www.tfrin.gov.tw/theme_data.php?id=182&sub_theme=C&theme=epaper_data" target="_blank" rel="noreferrer"><span>數位種原</span><b>多品系 SNP 資料庫</b><small>用全基因組標誌釐清親緣並支援種原保存</small></a>
+            <a href="https://www.tfrin.gov.tw/theme_data.php?id=1160&theme=research" target="_blank" rel="noreferrer"><span>氣候韌性</span><b>耐低溫品系與標誌選殖</b><small>正反雜交、F2 與回交族群支援抗逆育種</small></a>
+          </div>
+
           <div className="species-table-wrap">
             <div className="panel-title"><h3>台灣引進種源圖譜</h3><span>教材歷史紀錄</span></div>
             <table>
