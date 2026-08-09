@@ -9,6 +9,19 @@ type Repo = { name: string; url: string; description: string; stars: number; lan
 type IndustryPoint = { year: string; value: number; unit: string };
 type Research = { id: string; title: string; journal: string; publishedAt: string; authors: string[]; url: string };
 type FaoRelease = { globalProduction: { version: string; releaseDate: string; referenceThrough: string; url: string }; checkedAt: string };
+type MarketRow = { date: string; typeCode: number; fishName: string; marketName: string; highPrice: number | null; middlePrice: number | null; lowPrice: number | null; volume: number; averagePrice: number };
+type MarketData = {
+  latestDate: string;
+  previousDate: string;
+  totalVolume: number;
+  averagePrice: number;
+  volumeChangePercent: number | null;
+  priceChangePercent: number | null;
+  marketCount: number;
+  species: { fishName: string; totalVolume: number; averagePrice: number }[];
+  rows: MarketRow[];
+  url: string;
+};
 type LiveData = {
   updatedAt: string;
   status: "live" | "partial" | "fallback";
@@ -17,6 +30,7 @@ type LiveData = {
   repositories: Repo[];
   research: Research[];
   industry: IndustryPoint[];
+  market: MarketData | null;
   fao: FaoRelease;
 };
 type Weather = {
@@ -129,6 +143,7 @@ const fallback: LiveData = {
   ],
   research: [],
   industry: [],
+  market: null,
   fao: {
     globalProduction: { version: "2026.1.0", releaseDate: "2026-03-31", referenceThrough: "2024", url: "https://www.fao.org/fishery/static/FishStatJ/" },
     checkedAt: "",
@@ -153,6 +168,16 @@ function weatherLabel(code?: number) {
   if (code <= 67) return "有雨";
   if (code <= 77) return "降雪";
   return "雷雨";
+}
+
+function marketDate(value: string) {
+  if (!/^\d{7}$/.test(value)) return "日期未提供";
+  return `${Number(value.slice(0, 3)) + 1911}/${value.slice(3, 5)}/${value.slice(5, 7)}`;
+}
+
+function signedPercent(value: number | null) {
+  if (value == null) return "—";
+  return `${value >= 0 ? "+" : ""}${value.toFixed(1)}%`;
 }
 
 function App() {
@@ -233,8 +258,9 @@ function App() {
           <a href="#standards"><span>02</span>養殖基準</a>
           <a href="#breeding"><span>03</span>育種保種</a>
           <a href="#yearbook"><span>04</span>2025 年報</a>
-          <a href="#industry"><span>05</span>國內外情報</a>
-          <a href="#resources"><span>06</span>開源資源</a>
+          <a href="#market"><span>05</span>每日行情</a>
+          <a href="#industry"><span>06</span>國內外情報</a>
+          <a href="#resources"><span>07</span>開源資源</a>
         </nav>
         <div className="side-note">
           <span className="pulse" /> 每 10 分鐘重讀
@@ -514,9 +540,57 @@ function App() {
           </article>
         </section>
 
+        <section id="market" className="section-block market-section">
+          <div className="section-title">
+            <div><span>05 / DAILY FISH MARKET</span><h2>每日魚市場交易行情</h2></div>
+            <p>彙整農業部漁產品交易行情中的吳郭魚、尼羅紅魚與其他吳郭；平均價採各市場成交量加權，避免小量交易扭曲整體價格。</p>
+          </div>
+          {live.market ? <>
+            <div className="market-kpis">
+              <article className="market-kpi accent">
+                <span>當日總交易量</span><strong>{fmt.format(Math.round(live.market.totalVolume))}</strong><small>公斤 · 較前一交易日 <b className={(live.market.volumeChangePercent ?? 0) >= 0 ? "up" : "down"}>{signedPercent(live.market.volumeChangePercent)}</b></small>
+              </article>
+              <article className="market-kpi">
+                <span>量加權平均價</span><strong>{live.market.averagePrice.toFixed(1)}</strong><small>元／公斤 · 較前一交易日 <b className={(live.market.priceChangePercent ?? 0) >= 0 ? "up" : "down"}>{signedPercent(live.market.priceChangePercent)}</b></small>
+              </article>
+              <article className="market-kpi">
+                <span>有交易市場</span><strong>{live.market.marketCount}</strong><small>處批發市場 · {live.market.species.length} 個吳郭魚類別</small>
+              </article>
+              <article className="market-kpi">
+                <span>最新交易日</span><strong className="market-date">{marketDate(live.market.latestDate)}</strong><small>比較基準 {marketDate(live.market.previousDate)}</small>
+              </article>
+            </div>
+            <div className="market-layout">
+              <article className="market-species panel">
+                <div className="panel-title"><h3>品種量價摘要</h3><span>成交量加權</span></div>
+                <div className="species-market-list">
+                  {live.market.species.map((item, index) => (
+                    <div key={item.fishName}>
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                      <div><b>{item.fishName}</b><small>{fmt.format(Math.round(item.totalVolume))} 公斤</small></div>
+                      <strong>{item.averagePrice.toFixed(1)}<small>元／kg</small></strong>
+                    </div>
+                  ))}
+                </div>
+                <a className="official-market-link" href={live.market.url} target="_blank" rel="noreferrer">開啟漁產品批發市場交易行情站 ↗</a>
+                <p className="source-line">來源：農業部漁業署漁產品交易行情。市場休市或尚未上傳時，不以零值補列。</p>
+              </article>
+              <article className="market-table panel">
+                <div className="panel-title"><h3>各市場成交明細</h3><span>{live.market.rows.length} 筆 · 依交易量排序</span></div>
+                <div className="table-scroll"><table>
+                  <thead><tr><th>魚貨</th><th>市場</th><th>上價</th><th>中價</th><th>下價</th><th>平均價</th><th>交易量（kg）</th></tr></thead>
+                  <tbody>{live.market.rows.map((row) => <tr key={`${row.typeCode}-${row.marketName}`}>
+                    <td><b>{row.fishName}</b></td><td>{row.marketName}</td><td>{row.highPrice?.toFixed(1) ?? "—"}</td><td>{row.middlePrice?.toFixed(1) ?? "—"}</td><td>{row.lowPrice?.toFixed(1) ?? "—"}</td><td><b>{row.averagePrice.toFixed(1)}</b></td><td>{fmt.format(row.volume)}</td>
+                  </tr>)}</tbody>
+                </table></div>
+              </article>
+            </div>
+          </> : <article className="panel market-empty"><h3>行情資料暫時無法連線</h3><p>系統會在下一輪排程重試，成功後自動顯示最新交易日資料。</p></article>}
+        </section>
+
         <section id="industry" className="section-block">
           <div className="section-title">
-            <div><span>05 / DOMESTIC & GLOBAL PULSE</span><h2>國內外吳郭魚情報</h2></div>
+            <div><span>06 / DOMESTIC & GLOBAL PULSE</span><h2>國內外吳郭魚情報</h2></div>
             <p>Google News、PubMed、FAO 與農業部開放資料每 10 分鐘重新擷取；來源失敗時保留上一版並標示部分更新。</p>
           </div>
           <div className="industry-grid">
@@ -597,7 +671,7 @@ function App() {
 
         <section id="resources" className="section-block resources-section">
           <div className="section-title">
-            <div><span>06 / OPEN SOURCE</span><h2>GitHub 吳郭魚與水產資料工具</h2></div>
+            <div><span>07 / OPEN SOURCE</span><h2>GitHub 吳郭魚與水產資料工具</h2></div>
             <p>每次部署以 GitHub 公開搜尋重新整理；收錄代表資料與工具，不代表品質背書。</p>
           </div>
           <div className="repo-grid">
@@ -619,7 +693,7 @@ function App() {
           </div>
           <div className="source-columns">
             <div><b>教材層</b><p>五份使用者提供 PDF；核心引用集中在《台灣淡水魚類養殖（上）》吳郭魚章與《吳郭魚之育種管理》。</p></div>
-            <div><b>官方統計層</b><p>2025 漁業年報 5 組 ODS／PDF，並以<a href="https://data.gov.tw/en/datasets/44084" target="_blank" rel="noreferrer">漁業產量資料集</a>與農業部 B32 放養資料補充。</p></div>
+            <div><b>官方統計層</b><p>2025 漁業年報 5 組 ODS／PDF，並以<a href="https://data.gov.tw/en/datasets/44084" target="_blank" rel="noreferrer">漁業產量資料集</a>、農業部 B32 放養資料與<a href="https://data.moa.gov.tw/open_detail.aspx?id=039" target="_blank" rel="noreferrer">每日漁產品交易行情</a>補充。</p></div>
             <div><b>定時網路層</b><p>Google News RSS、PubMed、FAO FishStatJ、GitHub 與 Open-Meteo；每 10 分鐘重抓，失敗時保留上一版。</p></div>
           </div>
         </section>

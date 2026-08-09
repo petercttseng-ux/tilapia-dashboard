@@ -184,16 +184,79 @@ async function loadIndustry() {
     .slice(0, 12);
 }
 
-let previous = { news: officialFallback, internationalNews: [], repositories: [], research: [], industry: [], fao: faoFallback };
+function summarizeMarketRows(rows) {
+  const totalVolume = rows.reduce((sum, row) => sum + row.volume, 0);
+  const totalValue = rows.reduce((sum, row) => sum + row.averagePrice * row.volume, 0);
+  return {
+    totalVolume,
+    averagePrice: totalVolume ? totalValue / totalVolume : 0,
+  };
+}
+
+function rounded(value, digits = 1) {
+  return Number(value.toFixed(digits));
+}
+
+function roundedOrNull(value, digits = 1) {
+  return value == null ? null : rounded(value, digits);
+}
+
+async function loadMarket() {
+  const typeCodes = [1011, 1012, 1019];
+  const payloads = await Promise.all(typeCodes.map((typeCode) => fetchJson(
+    `https://data.moa.gov.tw/Service/OpenData/FromM/AquaticTransData.aspx?$top=400&$skip=0&TypeNo=${typeCode}`,
+  )));
+  const rows = payloads.flatMap((body) => Array.isArray(body) ? body : body.Data || body.data || [])
+    .map((row) => ({
+      date: String(row["交易日期"] || ""),
+      typeCode: numeric(row["品種代碼"]),
+      fishName: String(row["魚貨名稱"] || ""),
+      marketName: String(row["市場名稱"] || ""),
+      highPrice: numeric(row["上價"]),
+      middlePrice: numeric(row["中價"]),
+      lowPrice: numeric(row["下價"]),
+      volume: numeric(row["交易量"]),
+      averagePrice: numeric(row["平均價"]),
+    }))
+    .filter((row) => /^\d{7}$/.test(row.date) && row.typeCode != null && row.fishName && row.marketName && row.volume != null && row.averagePrice != null);
+  const dates = [...new Set(rows.map((row) => row.date))].sort((a, b) => b.localeCompare(a));
+  if (!dates.length) throw new Error("No tilapia market records returned");
+  const [latestDate, previousDate = ""] = dates;
+  const latestRows = rows.filter((row) => row.date === latestDate).sort((a, b) => b.volume - a.volume);
+  const previousRows = rows.filter((row) => row.date === previousDate);
+  const latest = summarizeMarketRows(latestRows);
+  const previousSummary = summarizeMarketRows(previousRows);
+  const percentageChange = (current, prior) => prior ? ((current - prior) / prior) * 100 : null;
+  const species = [...new Set(latestRows.map((row) => row.fishName))].map((fishName) => {
+    const summary = summarizeMarketRows(latestRows.filter((row) => row.fishName === fishName));
+    return { fishName, totalVolume: rounded(summary.totalVolume), averagePrice: rounded(summary.averagePrice, 2) };
+  }).sort((a, b) => b.totalVolume - a.totalVolume);
+
+  return {
+    latestDate,
+    previousDate,
+    totalVolume: rounded(latest.totalVolume),
+    averagePrice: rounded(latest.averagePrice, 2),
+    volumeChangePercent: roundedOrNull(percentageChange(latest.totalVolume, previousSummary.totalVolume), 2),
+    priceChangePercent: roundedOrNull(percentageChange(latest.averagePrice, previousSummary.averagePrice), 2),
+    marketCount: new Set(latestRows.map((row) => row.marketName)).size,
+    species,
+    rows: latestRows,
+    url: "https://efish.fa.gov.tw/",
+  };
+}
+
+let previous = { news: officialFallback, internationalNews: [], repositories: [], research: [], industry: [], market: null, fao: faoFallback };
 try { previous = { ...previous, ...JSON.parse(await readFile(output, "utf8")) }; } catch {}
 
-const names = ["news", "internationalNews", "repositories", "research", "industry", "fao"];
+const names = ["news", "internationalNews", "repositories", "research", "industry", "market", "fao"];
 const jobs = await Promise.allSettled([
   loadDomesticNews(),
   loadNews({ international: true }),
   loadRepositories(),
   loadResearch(),
   loadIndustry(),
+  loadMarket(),
   loadFaoRelease(),
 ]);
 const successful = jobs.filter((job) => job.status === "fulfilled").length;
@@ -207,13 +270,15 @@ const next = {
   repositories: valueOrPrevious(2, "repositories"),
   research: valueOrPrevious(3, "research"),
   industry: valueOrPrevious(4, "industry"),
-  fao: valueOrPrevious(5, "fao"),
+  market: valueOrPrevious(5, "market"),
+  fao: valueOrPrevious(6, "fao"),
   sources: {
     news: "農業部漁業署 + 農業部水產試驗所 RSS + Google News RSS 多主題檢索",
     internationalNews: "Google News RSS",
     repositories: "GitHub Search API",
     research: "NCBI PubMed E-utilities",
     industry: "農業部縣市別吳郭魚放養量 UnitId B32",
+    market: "農業部漁產品交易行情 AquaticTransData（品種 1011、1012、1019）",
     fao: "FAO FishStatJ current_versionFAO.xml",
   },
   errors: jobs.map((job, index) => job.status === "rejected" ? ({ source: names[index], message: String(job.reason) }) : null).filter(Boolean),
@@ -224,6 +289,6 @@ await writeFile(output, `${JSON.stringify(next, null, 2)}\n`, "utf8");
 console.log(JSON.stringify({
   output,
   status: next.status,
-  counts: { news: next.news.length, internationalNews: next.internationalNews.length, repositories: next.repositories.length, research: next.research.length, industry: next.industry.length },
+  counts: { news: next.news.length, internationalNews: next.internationalNews.length, repositories: next.repositories.length, research: next.research.length, industry: next.industry.length, market: next.market?.rows?.length || 0 },
   errors: next.errors,
 }));

@@ -381,6 +381,40 @@ th { color: var(--muted); font-size: 9px; text-align: left; }
 th, td { padding: 11px 12px; border-bottom: 1px solid var(--line); }
 tbody tr:hover { background: rgba(127,194,177,.08); }
 
+.market-section { background: #f4f6f0; }
+.market-kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
+.market-kpi { min-height: 150px; padding: 22px; border: 1px solid var(--line); border-radius: 14px; background: var(--white); box-shadow: var(--shadow); }
+.market-kpi span, .market-kpi strong, .market-kpi small { display: block; }
+.market-kpi > span { color: var(--teal); font-size: 9px; font-weight: 800; letter-spacing: .08em; }
+.market-kpi > strong { margin: 20px 0 5px; font-size: clamp(30px, 3vw, 44px); line-height: 1; letter-spacing: -.05em; }
+.market-kpi > small { color: var(--muted); font-size: 9px; }
+.market-kpi small b { display: inline; }
+.market-kpi .up { color: var(--teal); }
+.market-kpi .down { color: var(--coral); }
+.market-kpi.accent { color: #f5faf3; background: var(--teal); }
+.market-kpi.accent > span { color: var(--lime); }
+.market-kpi.accent > small { color: rgba(255,255,255,.62); }
+.market-kpi.accent .up { color: var(--lime); }
+.market-kpi .market-date { margin-top: 26px; font-size: clamp(21px, 2vw, 29px); letter-spacing: -.03em; }
+.market-layout { display: grid; grid-template-columns: .72fr 1.28fr; gap: 16px; }
+.market-species { display: flex; flex-direction: column; }
+.species-market-list { display: grid; }
+.species-market-list > div { display: grid; grid-template-columns: 28px 1fr auto; align-items: center; gap: 11px; padding: 18px 0; border-top: 1px solid var(--line); }
+.species-market-list > div > span { color: var(--aqua); font: 700 10px Georgia, serif; }
+.species-market-list b, .species-market-list small, .species-market-list strong { display: block; }
+.species-market-list b { font-size: 12px; }
+.species-market-list small { margin-top: 3px; color: var(--muted); font-size: 8px; }
+.species-market-list > div > strong { color: var(--teal); font-size: 21px; text-align: right; }
+.species-market-list > div > strong small { font-weight: 500; }
+.official-market-link { display: inline-block; margin-top: auto; padding: 10px 12px; border-radius: 8px; color: #fff; background: var(--teal); font-size: 9px; font-weight: 700; text-align: center; text-decoration: none; }
+.official-market-link:hover, .official-market-link:focus-visible { background: var(--teal-dark); outline: none; }
+.market-table { min-width: 0; }
+.market-table table { min-width: 720px; }
+.market-table th:nth-child(n+3), .market-table td:nth-child(n+3) { text-align: right; }
+.market-table td { font-variant-numeric: tabular-nums; }
+.market-empty { color: var(--muted); }
+.market-empty h3 { color: var(--ink); }
+
 .industry-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .history-chart, .news { min-height: 430px; }
 .bars { height: 275px; display: flex; align-items: flex-end; justify-content: space-around; gap: 12px; padding: 35px 10px 0; border-bottom: 1px solid var(--line); background: repeating-linear-gradient(to top, transparent 0 54px, rgba(16,45,44,.055) 55px); }
@@ -468,6 +502,7 @@ tbody tr:hover { background: rgba(127,194,177,.08); }
   .yearbook-kpis { grid-template-columns: 1fr 1fr; }
   .breeding-kpis { grid-template-columns: 1fr 1fr; }
   .target-grid { grid-template-columns: repeat(3, 1fr); }
+  .market-kpis { grid-template-columns: 1fr 1fr; }
   .cost { grid-column: span 2; }
   .donut-wrap { justify-content: center; }
   .repo-grid { grid-template-columns: 1fr 1fr; }
@@ -488,7 +523,7 @@ tbody tr:hover { background: rgba(127,194,177,.08); }
   .hero-grid { grid-template-columns: 1fr; }
   .update-card { grid-column: auto; }
   .section-title { grid-template-columns: 1fr; gap: 15px; }
-  .operations-grid, .breeding-layout, .industry-grid, .yearbook-grid, .global-intel-grid { grid-template-columns: 1fr; }
+  .operations-grid, .breeding-layout, .industry-grid, .yearbook-grid, .global-intel-grid, .market-layout { grid-template-columns: 1fr; }
   .breeding-method-grid, .conservation-grid { grid-template-columns: 1fr; }
   .breeding-research-links { grid-template-columns: 1fr; }
   .cost { grid-column: auto; }
@@ -516,6 +551,7 @@ tbody tr:hover { background: rgba(127,194,177,.08); }
   .weather-details { grid-template-columns: 1fr 1fr; }
   .fact-grid { grid-template-columns: 1fr; }
   .yearbook-kpis { grid-template-columns: 1fr; }
+  .market-kpis { grid-template-columns: 1fr; }
   .breeding-kpis, .target-grid { grid-template-columns: 1fr; }
   .method-list > div { grid-template-columns: 24px 1fr; }
   .method-list p, .method-list small { grid-column: 2; }

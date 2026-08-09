@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-08T21:51:37.873Z",
+  "updatedAt": "2026-08-09T12:56:06.945Z",
   "status": "live",
   "news": [
     {
@@ -135,7 +135,7 @@
     {
       "title": "Tilapia keeps Brazil’s aquaculture exports afloat despite steep first-half decline",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNTFBTMFMyZGw4YnJNLTZuckRyYXRPLS1JbzN5dWRPOGJ4Z1QyNmp4dWRxVmRjMS1zUDg3Y0huUG1oNFQwdkUzMk8wbUxSYUhCN1Q1NWtTT2RqWFV2M2taWW02N0s5WDNtbDNRN3lkd0VTTG56TUw1Z28tT09yWnZVN2F3TmYxbVhlYzhOZUZlci1yTTgxOUloTlRPT1lWeFNRUmZfN25TemFlUUJGVXo5SzljXzItdFNxOW8yRTFXczJMZkk1?oc=5",
-      "source": "Undercurrent News",
+      "source": "undercurrentnews.com",
       "publishedAt": "2026-08-07T14:11:00.000Z"
     },
     {
@@ -147,7 +147,7 @@
     {
       "title": "Benchmark Genetics helps Vietnamese fish farmer pivot to tilapia",
       "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPWjQ1YzhIZTVHWHoyZUUxWXZUbm80WjhNekRnMDdtQUtQR2FKRVVZTllaWHNXeXRiMGZ0TVhMOVlMNzdJWjRkbjdkdnlmN2Z5Ml9wWlNDeDNqNVRnelVpU29uVUFSNHgtM1BCRTlGdUsxMFBNM21zd1R1TzY0V1QweUtsQlEzNktOSTh2eEVySzBQYWFva1hyN0FWM1gyd0xROXR6WjU3dTNRc0RyTm9XRi1ESHFpMFBWdDlfSFpGUlFBeFFnbElabUQ1bklDbks3NEFkLUZmMUxEQVFTcy1senRvWUZGZU0yOWV5RmwzbEs?oc=5",
-      "source": "fishfarmingexpert.com",
+      "source": "Fishfarming expert",
       "publishedAt": "2026-08-05T07:53:36.000Z"
     },
     {
@@ -183,12 +183,20 @@
   ],
   "repositories": [
     {
-      "name": "Omar-404-BlackOps/AquaTrident",
-      "url": "https://github.com/Omar-404-BlackOps/AquaTrident",
-      "description": "AquaTrident, as its name suggests, is an aquaculture control/feedback system that monitors vital aquatic parameters, such as pH, Turbidity and TDS, designed for monitoring and regulating the environment conditions to be adequate for marine life specific types, in addition to providing real life data of the controlled system. ",
+      "name": "chengsunmail/iras",
+      "url": "https://github.com/chengsunmail/iras",
+      "description": "RAS 循环水养殖工程设计与仿真工具 | 多阶段规模反推 · 水质沿程仿真 · 设备选型 · 投资概算 | 纯前端单文件，双击即用",
+      "stars": 5,
+      "language": "HTML",
+      "updatedAt": "2026-08-09T11:49:57Z"
+    },
+    {
+      "name": "thiruking/AQUASENTINEL-",
+      "url": "https://github.com/thiruking/AQUASENTINEL-",
+      "description": "",
       "stars": 0,
-      "language": "",
-      "updatedAt": "2026-08-08T00:47:12Z"
+      "language": "HTML",
+      "updatedAt": "2026-08-09T10:15:59Z"
     },
     {
       "name": "ZhuYingJessica/cv-daily",
@@ -196,15 +204,15 @@
       "description": "This is an Arxiv paper collection",
       "stars": 47,
       "language": "Python",
-      "updatedAt": "2026-08-08T00:37:50Z"
+      "updatedAt": "2026-08-09T00:39:35Z"
     },
     {
-      "name": "chengsunmail/iras",
-      "url": "https://github.com/chengsunmail/iras",
-      "description": "RAS 循环水养殖工程设计与仿真工具 | 多阶段规模反推 · 水质沿程仿真 · 设备选型 · 投资概算 | 纯前端单文件，双击即用",
-      "stars": 5,
-      "language": "HTML",
-      "updatedAt": "2026-08-07T21:21:50Z"
+      "name": "Omar-404-BlackOps/AquaTrident",
+      "url": "https://github.com/Omar-404-BlackOps/AquaTrident",
+      "description": "AquaTrident, as its name suggests, is an aquaculture control/feedback system that monitors vital aquatic parameters, such as pH, Turbidity and TDS, designed for monitoring and regulating the environment conditions to be adequate for marine life specific types, in addition to providing real life data of the controlled system. ",
+      "stars": 0,
+      "language": "",
+      "updatedAt": "2026-08-08T00:47:12Z"
     },
     {
       "name": "kushal-satya/bangladesh-agritech",
@@ -237,14 +245,6 @@
       "stars": 1,
       "language": "Python",
       "updatedAt": "2026-08-05T06:40:37Z"
-    },
-    {
-      "name": "dev-hari-haran/AQUA-INTELL",
-      "url": "https://github.com/dev-hari-haran/AQUA-INTELL",
-      "description": "",
-      "stars": 0,
-      "language": "Python",
-      "updatedAt": "2026-08-04T14:40:49Z"
     }
   ],
   "research": [
@@ -383,6 +383,310 @@
       "unit": "尾"
     }
   ],
+  "market": {
+    "latestDate": "1150807",
+    "previousDate": "1150806",
+    "totalVolume": 27004.5,
+    "averagePrice": 57.45,
+    "volumeChangePercent": -14.1,
+    "priceChangePercent": -0.95,
+    "marketCount": 11,
+    "species": [
+      {
+        "fishName": "吳郭魚",
+        "totalVolume": 22957.8,
+        "averagePrice": 54.61
+      },
+      {
+        "fishName": "其他吳郭",
+        "totalVolume": 3004.3,
+        "averagePrice": 75.98
+      },
+      {
+        "fishName": "尼羅紅魚",
+        "totalVolume": 1042.4,
+        "averagePrice": 66.7
+      }
+    ],
+    "rows": [
+      {
+        "date": "1150807",
+        "typeCode": 1011,
+        "fishName": "吳郭魚",
+        "marketName": "台中",
+        "highPrice": 61.4,
+        "middlePrice": 54.6,
+        "lowPrice": 36.3,
+        "volume": 4673.2,
+        "averagePrice": 50.1
+      },
+      {
+        "date": "1150807",
+        "typeCode": 1011,
+        "fishName": "吳郭魚",
+        "marketName": "岡山",
+        "highPrice": 66.8,
+        "middlePrice": 51.7,
+        "lowPrice": 41,
+        "volume": 4315.8,
+        "averagePrice": 52.6
+      },
+      {
+        "date": "1150807",
+        "typeCode": 1011,
+        "fishName": "吳郭魚",
+        "marketName": "埔心",
+        "highPrice": 60.8,
+        "middlePrice": 53.4,
+        "lowPrice": 41.5,
+        "volume": 4043.7,
+        "averagePrice": 52.5
+      },
+      {
+        "date": "1150807",
+        "typeCode": 1011,
+        "fishName": "吳郭魚",
+        "marketName": "彰化",
+        "highPrice": 61,
+        "middlePrice": 51,
+        "lowPrice": 5,
+        "volume": 3754.7,
+        "averagePrice": 50.5
+      },
+      {
+        "date": "1150807",
+        "typeCode": 1011,
+        "fishName": "吳郭魚",
+        "marketName": "桃園",
+        "highPrice": 88.4,
+        "middlePrice": 66.5,
+        "lowPrice": 30.4,
+        "volume": 1705.5,
+        "averagePrice": 64
+      },
+      {
+        "date": "1150807",
+        "typeCode": 1011,
+        "fishName": "吳郭魚",
+        "marketName": "斗南",
+        "highPrice": 65,
+        "middlePrice": 49.6,
+        "lowPrice": 43,
+        "volume": 1481.7,
+        "averagePrice": 51.4
+      },
+      {
+        "date": "1150807",
+        "typeCode": 1011,
+        "fishName": "吳郭魚",
+        "marketName": "嘉義",
+        "highPrice": 57.4,
+        "middlePrice": 51.4,
+        "lowPrice": 48,
+        "volume": 1466.5,
+        "averagePrice": 51.9
+      },
+      {
+        "date": "1150807",
+        "typeCode": 1011,
+        "fishName": "吳郭魚",
+        "marketName": "台南",
+        "highPrice": 110.6,
+        "middlePrice": 83,
+        "lowPrice": 83,
+        "volume": 1034.9,
+        "averagePrice": 88.5
+      },
+      {
+        "date": "1150807",
+        "typeCode": 1019,
+        "fishName": "其他吳郭",
+        "marketName": "嘉義",
+        "highPrice": 81.7,
+        "middlePrice": 62.5,
+        "lowPrice": 50.2,
+        "volume": 865,
+        "averagePrice": 63.9
+      },
+      {
+        "date": "1150807",
+        "typeCode": 1019,
+        "fishName": "其他吳郭",
+        "marketName": "新竹",
+        "highPrice": 64.4,
+        "middlePrice": 42.1,
+        "lowPrice": 15.6,
+        "volume": 789.4,
+        "averagePrice": 41.3
+      },
+      {
+        "date": "1150807",
+        "typeCode": 1019,
+        "fishName": "其他吳郭",
+        "marketName": "桃園",
+        "highPrice": 111.3,
+        "middlePrice": 82.4,
+        "lowPrice": 70,
+        "volume": 464.7,
+        "averagePrice": 85.7
+      },
+      {
+        "date": "1150807",
+        "typeCode": 1011,
+        "fishName": "吳郭魚",
+        "marketName": "苗栗",
+        "highPrice": 85,
+        "middlePrice": 57.5,
+        "lowPrice": 30,
+        "volume": 441.7,
+        "averagePrice": 83.4
+      },
+      {
+        "date": "1150807",
+        "typeCode": 1019,
+        "fishName": "其他吳郭",
+        "marketName": "台中",
+        "highPrice": 116,
+        "middlePrice": 99,
+        "lowPrice": 50,
+        "volume": 319.3,
+        "averagePrice": 99.4
+      },
+      {
+        "date": "1150807",
+        "typeCode": 1012,
+        "fishName": "尼羅紅魚",
+        "marketName": "桃園",
+        "highPrice": 90.7,
+        "middlePrice": 65.4,
+        "lowPrice": 51.2,
+        "volume": 300.4,
+        "averagePrice": 69.7
+      },
+      {
+        "date": "1150807",
+        "typeCode": 1012,
+        "fishName": "尼羅紅魚",
+        "marketName": "埔心",
+        "highPrice": 79.5,
+        "middlePrice": 59.4,
+        "lowPrice": 26.7,
+        "volume": 204,
+        "averagePrice": 56.9
+      },
+      {
+        "date": "1150807",
+        "typeCode": 1012,
+        "fishName": "尼羅紅魚",
+        "marketName": "台中",
+        "highPrice": 85.5,
+        "middlePrice": 69.6,
+        "lowPrice": 62,
+        "volume": 197,
+        "averagePrice": 79.4
+      },
+      {
+        "date": "1150807",
+        "typeCode": 1019,
+        "fishName": "其他吳郭",
+        "marketName": "彰化",
+        "highPrice": 165,
+        "middlePrice": 127,
+        "lowPrice": 43,
+        "volume": 187.5,
+        "averagePrice": 127.1
+      },
+      {
+        "date": "1150807",
+        "typeCode": 1012,
+        "fishName": "尼羅紅魚",
+        "marketName": "苗栗",
+        "highPrice": 75,
+        "middlePrice": 55,
+        "lowPrice": 35,
+        "volume": 180,
+        "averagePrice": 45.5
+      },
+      {
+        "date": "1150807",
+        "typeCode": 1019,
+        "fishName": "其他吳郭",
+        "marketName": "埔心",
+        "highPrice": 165,
+        "middlePrice": 105.3,
+        "lowPrice": 48.4,
+        "volume": 152.4,
+        "averagePrice": 105.9
+      },
+      {
+        "date": "1150807",
+        "typeCode": 1019,
+        "fishName": "其他吳郭",
+        "marketName": "佳里",
+        "highPrice": 155,
+        "middlePrice": 105,
+        "lowPrice": 75,
+        "volume": 135,
+        "averagePrice": 123.3
+      },
+      {
+        "date": "1150807",
+        "typeCode": 1019,
+        "fishName": "其他吳郭",
+        "marketName": "斗南",
+        "highPrice": 165.1,
+        "middlePrice": 134.1,
+        "lowPrice": 103.7,
+        "volume": 91,
+        "averagePrice": 134.2
+      },
+      {
+        "date": "1150807",
+        "typeCode": 1012,
+        "fishName": "尼羅紅魚",
+        "marketName": "彰化",
+        "highPrice": 66,
+        "middlePrice": 64,
+        "lowPrice": 61,
+        "volume": 60,
+        "averagePrice": 63.5
+      },
+      {
+        "date": "1150807",
+        "typeCode": 1012,
+        "fishName": "尼羅紅魚",
+        "marketName": "新竹",
+        "highPrice": 79,
+        "middlePrice": 75,
+        "lowPrice": 71,
+        "volume": 59,
+        "averagePrice": 75
+      },
+      {
+        "date": "1150807",
+        "typeCode": 1012,
+        "fishName": "尼羅紅魚",
+        "marketName": "台南",
+        "highPrice": 117,
+        "middlePrice": 117,
+        "lowPrice": 117,
+        "volume": 42,
+        "averagePrice": 117
+      },
+      {
+        "date": "1150807",
+        "typeCode": 1011,
+        "fishName": "吳郭魚",
+        "marketName": "佳里",
+        "highPrice": 48,
+        "middlePrice": 10,
+        "lowPrice": 10,
+        "volume": 40.1,
+        "averagePrice": 19.7
+      }
+    ],
+    "url": "https://efish.fa.gov.tw/"
+  },
   "fao": {
     "globalProduction": {
       "version": "2026.1.0",
@@ -390,7 +694,7 @@
       "referenceThrough": "2024",
       "url": "https://www.fao.org/fishery/static/FishStatJ/"
     },
-    "checkedAt": "2026-08-08T21:51:37.014Z"
+    "checkedAt": "2026-08-09T12:56:05.899Z"
   },
   "sources": {
     "news": "農業部漁業署 + 農業部水產試驗所 RSS + Google News RSS 多主題檢索",
@@ -398,6 +702,7 @@
     "repositories": "GitHub Search API",
     "research": "NCBI PubMed E-utilities",
     "industry": "農業部縣市別吳郭魚放養量 UnitId B32",
+    "market": "農業部漁產品交易行情 AquaticTransData（品種 1011、1012、1019）",
     "fao": "FAO FishStatJ current_versionFAO.xml"
   },
   "errors": []
